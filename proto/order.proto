@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package order;
+option go_package = "github.com/lokeshkarthik5/go-services/proto";
+
+service OrderService {
+  rpc CreateOrder (OrderRequest) returns (OrderResponse);
+}
+
+message OrderRequest {
+  int32 user_id = 1;
+  int32 product_id = 2;
+}
+
+message OrderResponse {
+  string message = 1;
+}

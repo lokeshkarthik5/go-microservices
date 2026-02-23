@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package inventory;
+option go_package = "github.com/lokeshkarthik5/go-services/proto";
+
+service InventoryService {
+  rpc CheckStock (StockRequest) returns (StockResponse);
+}
+
+message StockRequest {
+  int32 product_id = 1;
+}
+
+message StockResponse {
+  bool in_stock = 1;
+}
